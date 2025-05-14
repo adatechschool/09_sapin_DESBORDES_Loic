@@ -38,10 +38,10 @@ function afficherTriangleGauche(n) {
         console.log(result); 
     }
 }
-// afficherTriangleGauche(4)
-// afficherTriangleDroite(4)
 
-function afficherPointeSapin(hauteur) {   
+
+function afficherEtage(hauteur, pointe_offset) {
+
     let pointe = "";
     for (let i = 0; i < hauteur; i++) {
         pointe += " ";
@@ -49,7 +49,8 @@ function afficherPointeSapin(hauteur) {
     pointe += "+";
     console.log(pointe)
 
-    for (let i = 0; i < hauteur; i++) {  
+    for (let i = pointe_offset; i < hauteur + pointe_offset; i++) {  
+        
         let result = "";
         for (let j = 0; j < hauteur-i-1; j++) {
             result += " "
@@ -59,19 +60,28 @@ function afficherPointeSapin(hauteur) {
             result += "*";
         }
         result += "|";
-
+    
         for (let j = 0; j < i; j++) {
             result += "*";
         }
-
+    
         result += "\\";
-
+    
         console.log(result)
-    }
-
+    } 
 }
-  
-afficherPointeSapin(1)
-afficherPointeSapin(2)
-afficherPointeSapin(3)
 
+afficherEtage(3, 0)
+afficherEtage(3, 1) 
+afficherEtage(3, 2) 
+
+
+//   /|\
+//  /*|*\
+// /**|**\
+//   /*|*\
+//  /**|**\
+// /***|***\
+//   /**|**\
+//  /***|***\
+// /****|****\
